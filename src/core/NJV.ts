@@ -68,7 +68,12 @@ export default class NJV extends HTMLElement {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
 
-  attributeChangedCallback(attr:any, old:any, now:any) { }
+  attributeChangedCallback(attr:any, old:any, now:any) { 
+    if(typeof attr !== 'string'){
+      throw new Error(`Invalid attribute, this should be a string`)
+    }
+    console.log(`attribute changed: ${attr} = ${old} -> ${now} `)
+  }
 
 
   static get observedAttributes() {

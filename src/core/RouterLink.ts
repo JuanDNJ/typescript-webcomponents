@@ -16,7 +16,7 @@ export default class RouterLink extends HTMLElement {
   }
   handlerEvent(event: Event) {
     event.preventDefault();
-    history.pushState({},"",this.getAttribute("href"))
+    history.pushState({}, "", this.getAttribute("href"))
     this.dispatchEvent(new CustomEvent("router-link", {
       composed: true,
       bubbles: true,
@@ -39,6 +39,7 @@ export default class RouterLink extends HTMLElement {
     if (typeof attr !== "string") {
       throw new Error("This Arg so much string")
     }
+    console.log(`attribute changed: ${attr} = ${old} -> ${now} `)
   }
 
 
