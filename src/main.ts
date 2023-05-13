@@ -14,4 +14,5 @@ njv.render('#app')
 window.onpopstate = () => {
   njv.render('#app')
 }
+// TODDO: Editar comentarios de lo que he echo
 // TODDO: Editar READMY para explicar como funciona
