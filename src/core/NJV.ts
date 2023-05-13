@@ -18,6 +18,12 @@ export default class NJV extends HTMLElement {
       this.ready()
     }
     this.addEventListener<any>("router-link", this.handleEvent)
+    window.addEventListener("popstate", () => this.handlePopState)
+  }
+  handlePopState(event: PopStateEvent) {
+    event.preventDefault()
+    console.log(event)
+  
   }
   static get styles() {
     return /* CSS */ `
@@ -38,11 +44,25 @@ export default class NJV extends HTMLElement {
   }
   renderRouter() {
     
-    this.shadowRoot!.appendChild(this.router[0].component)
+    let route = this.router.find(rec=>rec.path === location.pathname)!
+    if(!route){
+      route = this.router[0]
+    }
+    this.shadowRoot!.appendChild(route.component)
   }
   handleEvent(event: CustomEvent) {
     console.log(event, event.detail)
-    this.shadowRoot!.appendChild(this.router.find(rec=>rec.path === event.detail)?.component!)
+    let route = this.router.find(rec=>rec.path === event.detail)!
+    if(route){
+      route = route
+    }else{
+      route = this.router[this.router.length]
+    }
+    this.shadowRoot!.appendChild(route.component)
+  }
+  render(appTag: string = '#app'){
+    const app = document.querySelector<HTMLDivElement>(appTag)!
+    app.appendChild(this)
   }
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";

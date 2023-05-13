@@ -9,8 +9,8 @@ const njv = new NJV({
   router
 });
 
+njv.render('#app')
 
-console.log(njv)
-
-
-document.querySelector<HTMLDivElement>('#app')!.appendChild(njv)
+window.onpopstate = () => {
+  njv.render('#app')
+}

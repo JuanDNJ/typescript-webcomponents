@@ -16,7 +16,7 @@ export default class RouterLink extends HTMLElement {
   }
   handlerEvent(event: Event) {
     event.preventDefault();
-    
+    history.pushState({},"",this.getAttribute("href"))
     this.dispatchEvent(new CustomEvent("router-link", {
       composed: true,
       bubbles: true,
