@@ -1,15 +1,15 @@
-import '../style.css'
 import './RouterLink'
 import { OptionsApp, Route } from "./types"
 
 export default class NJV extends HTMLElement {
   _router: Route[]
+
   constructor(options: OptionsApp) {
     super()
-
     this._router = options.router
     this.attachShadow({ mode: 'open' })
   }
+
   connectedCallback() {
     this.ready()
     this.renderRouter()
@@ -21,49 +21,49 @@ export default class NJV extends HTMLElement {
       :host{
         display: block;
       }
+     
     `
   }
+
   get router(): Route[] {
     return this._router
   }
+
   set router(router: Route[]) {
     this._router = [...router]
   }
-  ready() {
 
+  ready() {
+    
     this.shadowRoot!.innerHTML = /*html*/ `
-      <router-link goto="/">
-        <span>Inicio</span>
-      </router-link>
-      <router-link goto="/about">
-        <span>About</span>
-      </router-link>
+      <style>${NJV.styles}</style>
       <section class="router-view"></section>
     `
-   
   }
+  render(appTag: string = '#app') {
+    const app = document.querySelector(appTag) as HTMLDivElement
+    app.appendChild(this)
+  }
+
   renderRouter() {
     let route = this.router.find(rec => rec.path === location.pathname)!
     if (!route) {
-      route = this.router[0]
+      route = this.router[this.router.length - 1]
     }
     const routerView = this.shadowRoot!.querySelector(".router-view") as HTMLElement
     routerView.innerHTML = ''
     routerView.appendChild(route.component)
-
   }
+
   handleEvent(event: CustomEvent) {
     console.log(event, event.detail)
     this.renderRouter()
+  }
 
-  }
-  render(appTag: string = '#app') {
-    const app = document.querySelector<HTMLDivElement>(appTag)!
-    app.appendChild(this)
-  }
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
+
   attributeChangedCallback(attr: any, old: any, now: any) {
     if (typeof attr !== 'string') {
       throw new Error(`Invalid attribute, this should be a string`)

@@ -1,5 +1,4 @@
 export type OptionsApp = {
-  app: HTMLElement,
   router: Route[]
 }
 export type Route = {

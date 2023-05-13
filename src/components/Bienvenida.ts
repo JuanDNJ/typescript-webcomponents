@@ -24,10 +24,10 @@ export default class BienvenidaNjv extends HTMLElement {
   ready() {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${BienvenidaNjv.styles}</style>
-        <h1 class="clickMe">Bienvenid@ ${this.hasAttribute("nameUser") ? this.getAttribute("nameUser"): this.nameUser}</h1>
+      
+        <h2 part="h2">Bienvenid@ ${this.hasAttribute("nameUser") ? this.getAttribute("nameUser"): this.nameUser}</h2>
         <input name="nameUser" type="text" placeholder="name" />
       `
-      
   }
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";

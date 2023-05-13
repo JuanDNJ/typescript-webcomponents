@@ -1,3 +1,4 @@
+import "../components/Bienvenida"
 export default class Inicio extends HTMLElement {
   constructor() {
     super()
@@ -9,15 +10,20 @@ export default class Inicio extends HTMLElement {
   static get styles() {
     return /* CSS */ `
       :host{
-        display: block;
+        display: grid;
+        width: 100vw;
+      }
+      bienvenida-njv::part(h2) {
+        color: #646cff;
+        font-size: 12rem;
       }
     `
   }
   ready() {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${Inicio.styles}</style>
-        <h1>Inicio</h1>
-       
+        <h1 part="titulo">Inicio</h1>
+        <bienvenida-njv nameUser="Juan"></bienvenida-njv>
       `
   }
   disconnectedCallback() {
