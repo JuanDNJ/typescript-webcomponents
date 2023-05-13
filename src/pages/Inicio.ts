@@ -17,12 +17,7 @@ export default class Inicio extends HTMLElement {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${Inicio.styles}</style>
         <h1>Inicio</h1>
-        <router-link goto="/">
-          <spn>Inicio</spn>
-        </router-link>
-        <router-link goto="/about">
-          <spn>About</spn>
-        </router-link>
+       
       `
   }
   disconnectedCallback() {

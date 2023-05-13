@@ -27,7 +27,7 @@ export default class RouterLink extends HTMLElement {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${RouterLink.styles}</style>
         <a href="${this.hasAttribute("goto") ? this.getAttribute("goto") : '/'}">
-          <slot>Inicio</slot>
+          <slot></slot>
         </a>
       `
   }
