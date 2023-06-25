@@ -18,7 +18,7 @@ export default class Inicio extends HTMLElement {
   ready() {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${Inicio.styles}</style>
-        <h1 part="titulo">Inicio</h1>
+        <h1>Inicio</h1>
    `
   }
   disconnectedCallback() {
