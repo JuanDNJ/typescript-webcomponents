@@ -8,14 +8,10 @@ export default class Inicio extends HTMLElement {
     this.ready()
   }
   static get styles() {
-    return /* CSS */ `
+    return /*html*/ `
       :host{
         display: grid;
         width: 100vw;
-      }
-      bienvenida-njv::part(h2) {
-        color: #646cff;
-        font-size: 12rem;
       }
     `
   }
