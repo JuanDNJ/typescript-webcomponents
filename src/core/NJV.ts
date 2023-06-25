@@ -58,7 +58,7 @@ export default class NJV extends HTMLElement {
   }
 
   handleEvent(event: CustomEvent) {
-    console.log(event, event.detail);
+    // console.log(event, event.detail);
     this.renderRouter();
   }
 
