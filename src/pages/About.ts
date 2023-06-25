@@ -10,7 +10,7 @@ export default class About extends HTMLElement {
     return /* CSS */ `
       :host{
         display: grid;
-        width: 100vw;
+       
       }
     `
   }
