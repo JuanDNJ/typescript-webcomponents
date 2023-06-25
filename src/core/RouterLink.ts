@@ -12,6 +12,17 @@ export default class RouterLink extends HTMLElement {
       :host{
         display: block;
       }
+      a{
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: bolder;
+        font-size: 2vmin;
+      }
+      a:hover{
+       
+        color: var(--color-text);
+       
+      }
     `
   }
   handlerEvent(event: Event) {

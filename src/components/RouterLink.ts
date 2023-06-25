@@ -1,7 +1,7 @@
 export default class RouterLink extends HTMLAnchorElement {
   constructor() {
     super()
-    this.textContent = "LInk"
+    this.textContent = "Link"
     this.href = "http://google.es"
     console.log(this)
     this.addEventListener("click", this.handlerEvent)
