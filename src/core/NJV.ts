@@ -57,7 +57,7 @@ export default class NJV extends HTMLElement {
     routerView.appendChild(route.component);
   }
 
-  handleEvent(event: CustomEvent) {
+  handleEvent(_event: CustomEvent) {
     // console.log(event, event.detail);
     this.renderRouter();
   }

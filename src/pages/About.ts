@@ -24,7 +24,7 @@ export default class About extends HTMLElement {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
 
-  attributeChangedCallback(attr:any, old:any, now:any) { }
+  // attributeChangedCallback(attr:any, old:any, now:any) { }
 
 
   static get observedAttributes() {
