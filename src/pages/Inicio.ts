@@ -10,8 +10,8 @@ export default class Inicio extends HTMLElement {
   static get styles() {
     return /*CSS*/ `
       :host{
-        display: grid;
-       
+        display: block;
+        width:100%
       }
     `
   }

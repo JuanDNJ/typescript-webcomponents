@@ -9,8 +9,8 @@ export default class About extends HTMLElement {
   static get styles() {
     return /* CSS */ `
       :host{
-        display: grid;
-       
+        display: block;
+        width:100%
       }
     `
   }
