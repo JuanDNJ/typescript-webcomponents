@@ -47,7 +47,7 @@ export default class BienvenidaNjv extends HTMLElement {
     const letra = new LetraAnimada();
     letra.setAttribute("getLetra", "l")
     letra.setAttribute("animacion", "rotacion")
-    console.log(letra.getAttribute("getLetra"),letra.getAttribute("animacion"))
+    // console.log(letra.getAttribute("getLetra"),letra.getAttribute("animacion"))
     this.shadowRoot!.appendChild(letra)
     this.shadowRoot!.innerHTML += /*html*/ `
         <style>${BienvenidaNjv.styles}</style>

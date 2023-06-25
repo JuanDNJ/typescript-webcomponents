@@ -1,0 +1,8 @@
+:root {
+    
+    --color-text: rgb(232, 232, 232);
+    --color-link: rgb(100, 108, 255);
+    --color-link-hover: rgba(116, 123, 255, 0.757);
+    --font-size: 16px;
+    --max-width: 65vmax;
+  }

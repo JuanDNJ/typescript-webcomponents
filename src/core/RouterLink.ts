@@ -16,7 +16,7 @@ export default class RouterLink extends HTMLElement {
         text-decoration: none;
         color: var(--color-text);
         font-weight: bolder;
-        font-size: 2vmin;
+        font-size: var(--font-size, 2vmin);
       }
       a:hover{
        
@@ -27,6 +27,11 @@ export default class RouterLink extends HTMLElement {
   }
   handlerEvent(event: Event) {
     event.preventDefault();
+    const routerLink = event.target as HTMLAnchorElement
+    // Comprobar si es el primer evento
+    if (routerLink.getAttribute("href") === location.pathname) {
+      return
+    }
     history.pushState({}, "", this.getAttribute("href"))
     this.dispatchEvent(new CustomEvent("router-link", {
       composed: true,

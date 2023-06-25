@@ -28,14 +28,14 @@ export default class LetraAnimada extends HTMLElement {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
 
-  attributeChangedCallback(attr:any, old:any, now:any) { 
+  // attributeChangedCallback(attr:any, old:any, now:any) { 
 
-    if(typeof attr !== "string"){
-      throw new Error("Invalid attribute")
-    }
+  //   if(typeof attr !== "string"){
+  //     throw new Error("Invalid attribute")
+  //   }
   
-    console.log(`attribute ${attr} = ${old ? old : now}`)
-  }
+  //   console.log(`attribute ${attr} = ${old ? old : now}`)
+  // }
 
 
   static get observedAttributes() {

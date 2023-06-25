@@ -8,7 +8,7 @@ export default class Inicio extends HTMLElement {
     this.ready()
   }
   static get styles() {
-    return /*html*/ `
+    return /*CSS*/ `
       :host{
         display: grid;
         width: 100vw;
@@ -19,8 +19,7 @@ export default class Inicio extends HTMLElement {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${Inicio.styles}</style>
         <h1 part="titulo">Inicio</h1>
-        <bienvenida-njv nameUser="Juan"></bienvenida-njv>
-      `
+   `
   }
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";

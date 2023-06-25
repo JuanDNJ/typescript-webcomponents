@@ -14,6 +14,9 @@ export default class Navegacion extends HTMLElement {
       }
       nav{
         display: flex;
+        flex-direction: row;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
         column-gap: 1rem;
       }
     `
@@ -29,7 +32,7 @@ export default class Navegacion extends HTMLElement {
       `
   }
   handleEvent(event: Event): void {
-    console.log(event.target)
+    // console.log(event.target)
   }
 
   disconnectedCallback() {
