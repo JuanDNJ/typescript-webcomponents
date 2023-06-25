@@ -11,7 +11,7 @@ export default class Inicio extends HTMLElement {
     return /*CSS*/ `
       :host{
         display: grid;
-        width: 100vw;
+       
       }
     `
   }
