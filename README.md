@@ -1,1 +1,1 @@
-﻿# NJV Intento de framework, en typescript, webcomponent nativo
+﻿# NJV Intento spa, en typescript, webcomponent nativo
