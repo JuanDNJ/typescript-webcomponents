@@ -7,5 +7,3 @@ window.onpopstate = () => {
   njv.render('#app')
 }
 njv.render('#app')
-// TODDO: Editar comentarios de lo que he hecho
-// TODDO: Editar READMY.md para explicar como funciona
