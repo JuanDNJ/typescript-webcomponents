@@ -12,6 +12,18 @@ export default class TodoProyecto extends HTMLElement {
         :host{
             display: block;
         }
+        .todos{
+            display: grid;
+            padding-top: var(--heigth-header);
+        }
+        .todos>  h1 {
+            text-align: center;
+            grid-column: 1 / -1;
+            width: 100%;
+            border-bottom: 1px solid var(--btn-color-terciario-oscuro);
+            max-width: calc(100% - 2rem);
+            margin: 0 auto;
+        }
         ul.lista{
             list-style: none;
             display: flex;
@@ -26,6 +38,7 @@ export default class TodoProyecto extends HTMLElement {
             transition: all .3s ease;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
         }
       
         .item-list:hover{
@@ -35,24 +48,36 @@ export default class TodoProyecto extends HTMLElement {
         .item-list:hover > .name-todo{
             color: var(--btn-fondo-info);
         }
-        .todos{
-            display: grid;
-            padding-top: var(--heigth-header);
-        }
+       
         .completado{
-            background: var(--btn-fondo-accion);
-         
+            background: var(--color-sextario);
+            border-left: 5px solid var(--btn-fondo-accion);
         }
         .pendiente{
-            background: var(--color-secundario);
-          
+            background: var(--color-quintenario);
+            border-left: 5px solid var(--color-link);
         }
         .completado > .name-todo{
-            color: var(--color-primario)
+            color: var(--color-primario); 
         }
         .pendiente > .name-todo{
-            color: var(--btn-fondo-info)
+            color: var(--btn-fondo-info);
+           
         }
+        .contenedor-listas{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .lista-completados,.lista-pendientes{
+            background: var(--color-secundario);
+            padding: 1rem;
+            width: 100%;
+            gap: 5px;
+        }
+       
             
     `;
   }
@@ -69,17 +94,54 @@ export default class TodoProyecto extends HTMLElement {
         <style>${TodoProyecto.styles}</style>
         <section class="todos">
             <h1>Todos</h1>
-            <ul class="lista">
-                ${todos.filter((rec: any) => {
-                    if(rec.completado) return `<li class="item-list completado"><strong>${rec.name}</strong></li>`;
-                    return `<li class="item-list pendiente"><strong>${rec.name}</strong></li>`;
-                   
-                }).map((todo: any) => {
-                    console.log(todo)
-                })
-                  .join("")}
-            </ul>
-            
+            <section class="contenedor-listas">
+                <ul class="lista lista-completados">
+                    ${todos.filter((rec: any) => {
+                        if(rec.completado) return rec;
+                        return 
+                    
+                    }).map((todo: any) => {
+                    return /*html*/ `
+                        <li class="item-list completado">
+                            <span class="name-todo">${todo.name}</span>
+                            <div>
+                                <button type="button">
+                                    📝 Edit
+                                </button>
+                                <button type="button">
+                                    🗑 Delete
+                                </button>
+                                
+                            </div>
+                        </li>
+                    `;
+                    })
+                    .join("")}
+                </ul>
+                <ul class="lista lista-pendientes">
+                    ${todos.filter((rec: any) => {
+                        if(!rec.completado) return rec;
+                        return 
+                    
+                    }).map((todo: any) => {
+                    return /*html*/ `
+                        <li class="item-list pendiente">
+                            <span class="name-todo">${todo.name}</span>
+                            <div>
+                                <button type="button">
+                                    📝 Edit
+                                </button>
+                                <button type="button">
+                                    🗑 Delete
+                                </button>
+                                
+                            </div>
+                        </li>
+                    `;
+                    })
+                    .join("")}
+                </ul>
+            </section>
         </section>
       `;
   }

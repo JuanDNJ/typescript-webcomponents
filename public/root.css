@@ -4,10 +4,10 @@
   --color-secundario: rgb(38, 38, 38);
   --color-terciario: rgb(65, 65, 65);
   --color-cuaternario: rgb(94, 94, 94);
-  --color-quintenario: rgb(126, 126, 126);
-  --color-sextario: rgb(158, 158, 158);
-  --color-septenario: rgb(187, 187, 187);
-  --color-octenario: rgb(223, 223, 223);
+  --color-quintenario: rgb(255, 126, 126);
+  --color-sextario: rgb(130, 255, 143);
+  --color-septenario: rgb(128, 179, 255);
+  --color-octenario: rgb(255, 242, 129);
   --color-novenario: rgb(255, 255, 255);
 }
 :root {
