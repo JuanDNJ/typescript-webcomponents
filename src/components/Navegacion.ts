@@ -14,10 +14,14 @@ export default class Navegacion extends HTMLElement {
       }
       nav{
         display: flex;
+        place-content: center;
         flex-direction: row;
-        width: 100%;
+        min-width: var(--max-width);
+        padding: calc(var(--heigth-header) / 2 ) 0;
         background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
         column-gap: 1rem;
+        position: fixed;
+        top: 0;
       }
     `
   }
@@ -25,14 +29,14 @@ export default class Navegacion extends HTMLElement {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${Navegacion.styles}</style>
         <nav>
-            <router-link goto="/">Inicio</router-link>
-            <router-link goto="/about">About</router-link>
-            <router-link goto="/contact">Contact</router-link>
+            <router-link goto="/">JuanDFE</router-link>
+            <router-link goto="/about">Quien soy?</router-link>
+            <router-link goto="/contact">Contacto</router-link>
         </nav>
       `
   }
   handleEvent(event: Event): void {
-    // console.log(event.target)
+    console.log(event)
   }
 
   disconnectedCallback() {

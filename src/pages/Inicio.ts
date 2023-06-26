@@ -23,6 +23,7 @@ export default class Inicio extends HTMLElement {
      
       }
       .inicio{
+        padding-top: 60px;
         display: grid; 
         background: #343434;
       }
@@ -65,7 +66,7 @@ export default class Inicio extends HTMLElement {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
 
-  attributeChangedCallback(attr:any, old:any, now:any) { }
+  // attributeChangedCallback(attr:any, old:any, now:any) { }
 
 
   static get observedAttributes() {

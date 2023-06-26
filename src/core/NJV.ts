@@ -21,7 +21,9 @@ export default class NJV extends HTMLElement {
       :host{
         display: block;
       }
-     
+      .router-view{
+        margin-top: var(--heigth-header);
+      }
     `;
   }
 

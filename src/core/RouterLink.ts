@@ -26,9 +26,7 @@ export default class RouterLink extends HTMLElement {
         font-size: var(--font-size, 2vmin);
       }
       a:hover{
-       
         color: var(--color-text);
-       
       }
     `;
   }
