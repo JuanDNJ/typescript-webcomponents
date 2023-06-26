@@ -34,15 +34,14 @@ export default class TodoProyecto extends HTMLElement {
         }
     
         .item-list{
-            padding: .2vmin 1rem;
+            padding: .5vmin 1rem;
             transition: all .3s ease;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            place-content:  space-between center;
         }
       
         .item-list:hover{
-            cursor: pointer;
             background: var(--color-terciario);
         }
         .item-list:hover > .name-todo{
@@ -77,8 +76,38 @@ export default class TodoProyecto extends HTMLElement {
             width: 100%;
             gap: 5px;
         }
-       
-            
+        .btn, .btn-edit{
+            background: var(--btn-fondo);
+            color: var(--btn-color);
+            border: none;
+            border-radius: 3px;
+            padding: .5vmin 1vmin;
+            font-size: 1vmin;
+        }
+        .btn{
+            border: 2px solid var(--color-text);
+        }
+        .btn:hover{
+            background: var(--color-cuaternario);
+            color: var(--color-novenario);
+        }
+        .btn-edit{
+            color: var(--color-septenario);
+        }
+        .btn-delete{
+            color: var(--color-quintenario);
+        }
+        .btn-edit:hover{
+            background: var(--color-septenario);
+        }
+        .btn-delete:hover{
+            background: var(--color-quintenario);
+        }
+        .contenedor-botones{
+            display: flex;
+            gap: 1.5vmin;
+            align-items: center;
+        }
     `;
   }
   async fetchApiJuanDFE() {
@@ -104,11 +133,11 @@ export default class TodoProyecto extends HTMLElement {
                     return /*html*/ `
                         <li class="item-list completado">
                             <span class="name-todo">${todo.name}</span>
-                            <div>
-                                <button type="button">
+                            <div class="contenedor-botones">
+                                <button type="button" class="btn btn-edit">
                                     📝 Edit
                                 </button>
-                                <button type="button">
+                                <button type="button" class="btn btn-delete">
                                     🗑 Delete
                                 </button>
                                 
@@ -127,11 +156,11 @@ export default class TodoProyecto extends HTMLElement {
                     return /*html*/ `
                         <li class="item-list pendiente">
                             <span class="name-todo">${todo.name}</span>
-                            <div>
-                                <button type="button">
+                            <div class="contenedor-botones">
+                                <button type="button" class="btn btn-edit">
                                     📝 Edit
                                 </button>
-                                <button type="button">
+                                <button type="button" class="btn btn-delete">
                                     🗑 Delete
                                 </button>
                                 
