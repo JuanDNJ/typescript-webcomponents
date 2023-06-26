@@ -16,7 +16,7 @@ export default class Navegacion extends HTMLElement {
         display: flex;
         place-content: center;
         flex-direction: row;
-        min-width: var(--max-width);
+        width: var(--max-width);
         padding: calc(var(--heigth-header) / 2 ) 0;
         background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
         column-gap: 1rem;
@@ -31,6 +31,7 @@ export default class Navegacion extends HTMLElement {
         <nav>
             <router-link goto="/">JuanDFE</router-link>
             <router-link goto="/about">Quien soy?</router-link>
+            <router-link goto="/proyectos">Proyectos</router-link>
             <router-link goto="/contact">Contacto</router-link>
         </nav>
       `

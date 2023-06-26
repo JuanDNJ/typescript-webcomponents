@@ -1,9 +1,49 @@
 :root {
-    
-    --color-text: rgb(232, 232, 232);
-    --color-link: rgb(100, 108, 255);
-    --color-link-hover: rgba(116, 123, 255, 0.757);
-    --font-size: 16px;
-    --max-width: 65vmax;
-    --heigth-header: 6vmin;
-  }
+  /* Colores Tema */
+  --color-primario: rgb(0, 0, 0);
+  --color-secundario: rgb(38, 38, 38);
+  --color-terciario: rgb(65, 65, 65);
+  --color-cuaternario: rgb(94, 94, 94);
+  --color-quintenario: rgb(126, 126, 126);
+  --color-sextario: rgb(158, 158, 158);
+  --color-septenario: rgb(187, 187, 187);
+  --color-octenario: rgb(223, 223, 223);
+  --color-novenario: rgb(255, 255, 255);
+}
+:root {
+  /* Botones */
+  --btn-fondo-eliminar: rgb(255, 133, 133);
+  --btn-fondo-accion: rgb(193, 255, 138);
+  --btn-fondo-info: rgb(129, 249, 255);
+  --btn-fondo: rgb(65, 65, 65);
+
+  --btn-color-primario-claro: rgb(255, 255, 255);
+  --btn-color-secundario-claro: rgb(227, 227, 227);
+  --btn-color-terciario-claro: rgb(204, 204, 204);
+  --btn-color-cuaternario-claro: rgb(184, 184, 184);
+
+  --btn-color-primario-oscuro: rgb(0, 0, 0);
+  --btn-color-secundario-oscuro: rgb(50, 50, 50);
+  --btn-color-terciario-oscuro: rgb(103, 103, 103);
+  --btn-color-cuaternario-oscuro: rgb(156, 156, 156);
+}
+:root {
+  /* Fondos */
+  --color-fondo-claro: #ddfffe;
+  --color-fondo-secundario-claro: #e5ffff;
+
+  --color-fondo-oscuro: #223;
+  --color-fondo-secundario-oscuro: rgb(40, 34, 51);
+}
+:root {
+  /* Textos */
+  --color-text: rgb(232, 232, 232);
+  --color-link: rgb(100, 108, 255);
+  --color-link-hover: rgba(116, 123, 255, 0.757);
+}
+:root {
+  /* asdasdads */
+  --font-size: 16px;
+  --max-width: 65vmax;
+  --heigth-header: 6vmin;
+}

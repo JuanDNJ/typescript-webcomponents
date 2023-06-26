@@ -77,17 +77,17 @@ export default class RouterLink extends HTMLElement {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
   // Se ejecuta cuando se actualiza el componente
-  attributeChangedCallback(attr: any, old: any, now: any) {
-    if (typeof attr !== "string") {
-      throw new Error("This Arg so much string");
-    }
-    console.log(`attribute changed: ${attr} = ${old} -> ${now} `);
-  }
+  // attributeChangedCallback(attr: any, old: any, now: any) {
+  //   if (typeof attr !== "string") {
+  //     throw new Error("This Arg so much string");
+  //   }
+  //   console.log(`attribute changed: ${attr} = ${old} -> ${now} `);
+  // }
 
   // Funcion que se encarga de observar los atributos del componente
-  static get observedAttributes() {
-    return [""];
-  }
+  // static get observedAttributes() {
+  //   return [""];
+  // }
 }
 // Definimos el componente
 window.customElements.define("router-link", RouterLink);
