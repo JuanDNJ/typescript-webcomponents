@@ -41,7 +41,7 @@ body {
   min-width: 100vw;
 
   place-content: space-between center;
-
+  overflow: hidden auto;
   background: #223;
   color: var(--color-text);
 }

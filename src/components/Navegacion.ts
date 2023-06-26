@@ -16,12 +16,24 @@ export default class Navegacion extends HTMLElement {
         display: flex;
         place-content: center;
         flex-direction: row;
-        width: var(--max-width);
+        width: 100vw;
         padding: calc(var(--heigth-header) / 2 ) 0;
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);
         column-gap: 1rem;
         position: fixed;
         top: 0;
+      }
+      @media (min-width: 768px) {
+        nav{
+          
+          background: linear-gradient(90deg, rgba(50,0,36,1) 0%, rgba(0,100,121,1) 50%, rgba(50,0,36,1) 100%);
+        }
+      }
+      @media (min-width: 1280px) {
+        nav{
+          width: var(--max-width);
+          background: linear-gradient(90deg, rgba(52,212,255,1) 0%, rgba(58,9,121,1) 50%, rgba(52,212,255,1) 100%);
+        }
       }
     `
   }
