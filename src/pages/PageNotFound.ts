@@ -11,15 +11,30 @@ export default class PageNotFound extends HTMLElement {
       :host{
         display: block;
       }
+      .not-found{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 5vmin;
+      }
+      router-link{
+        text-decoration: underline;
+      }
     `
   }
   ready() {
     this.shadowRoot!.innerHTML = /*html*/ `
         <style>${PageNotFound.styles}</style>
-        <article>
-          <h1>404</h1>
-          <span>PageNotFound</span>
-        </article>
+        <section class="not-found">
+          <article>
+            <div>
+              <h1>404</h1>
+              <span>PageNotFound</span>
+            </div>
+            <router-link cRLink="rgba(244,10,60,1)" href="/">Home</router-link>
+          </article>
+        </section>
       `
   }
   disconnectedCallback() {

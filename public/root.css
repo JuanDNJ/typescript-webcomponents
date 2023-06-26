@@ -38,8 +38,9 @@
 :root {
   /* Textos */
   --color-text: rgb(232, 232, 232);
-  --color-link: rgb(100, 108, 255);
-  --color-link-hover: rgba(116, 123, 255, 0.757);
+
+  --color-router-link: rgb(100, 108, 255);
+  --color-router-link-hover: rgba(118, 253, 211, 0.757);
 }
 :root {
   /* asdasdads */

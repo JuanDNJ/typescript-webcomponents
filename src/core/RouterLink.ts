@@ -17,16 +17,17 @@ export default class RouterLink extends HTMLElement {
   static get styles() {
     return /* CSS */ `
       :host{
-        display: block;
+        display: inline-block;
+      
       }
       a{
         text-decoration: none;
-        color: var(--color-text);
+        color: var(--color-router-link, --color-octenario );
         font-weight: bolder;
         font-size: var(--font-size, 2vmin);
       }
       a:hover{
-        color: var(--color-text);
+        color: var(--color-router-link-hover);
       }
     `;
   }
@@ -67,7 +68,7 @@ export default class RouterLink extends HTMLElement {
         <style>${RouterLink.styles}</style>
         <a href="${
           this.hasAttribute("goto") ? this.getAttribute("goto") : "/"
-        }">
+        }" style="--color-router-link: ${this.hasAttribute("cRLink") ? this.getAttribute("cRLink") : '--color-octenario'}">
           <slot></slot>
         </a>
       `;

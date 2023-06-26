@@ -12,9 +12,16 @@ export default class TodoProyecto extends HTMLElement {
         :host{
             display: block;
         }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         .todos{
             display: grid;
             padding-top: var(--heigth-header);
+            width: 100%;
+            background: var(--color-secundario);
         }
         .todos>  h1 {
             text-align: center;
@@ -28,9 +35,6 @@ export default class TodoProyecto extends HTMLElement {
             list-style: none;
             display: flex;
             flex-direction: column;
-            padding: 0;
-            margin: 0;
-            height: 50vh;
         }
     
         .item-list{
@@ -65,10 +69,10 @@ export default class TodoProyecto extends HTMLElement {
         }
         .contenedor-listas{
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            place-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+            place-items: space-between center ;
             gap: 1rem;
-            padding: 1rem;
+            padding: 2vmin;
         }
         .lista-completados,.lista-pendientes{
             background: var(--color-secundario);
@@ -125,6 +129,7 @@ export default class TodoProyecto extends HTMLElement {
             <h1>Todos</h1>
             <section class="contenedor-listas">
                 <ul class="lista lista-completados">
+                    <h2>Completados</h2>
                     ${todos.filter((rec: any) => {
                         if(rec.completado) return rec;
                         return 
@@ -148,6 +153,7 @@ export default class TodoProyecto extends HTMLElement {
                     .join("")}
                 </ul>
                 <ul class="lista lista-pendientes">
+                    <h2>Pendientes</h2>
                     ${todos.filter((rec: any) => {
                         if(!rec.completado) return rec;
                         return 
@@ -177,11 +183,5 @@ export default class TodoProyecto extends HTMLElement {
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";
   }
-
-  //   attributeChangedCallback(attr:any, old:any, now:any) { }
-
-  //   static get observedAttributes() {
-  //     return [''];
-  //   }
 }
 window.customElements.define("todo-proyecto", TodoProyecto);

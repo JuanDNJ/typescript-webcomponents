@@ -1,4 +1,3 @@
-import "../components/Bienvenida"
 export default class Inicio extends HTMLElement {
   _lorem: string[] = []
   constructor() {
@@ -64,13 +63,6 @@ export default class Inicio extends HTMLElement {
   }
   disconnectedCallback() {
     this.shadowRoot!.innerHTML = /* html */ "";
-  }
-
-  // attributeChangedCallback(attr:any, old:any, now:any) { }
-
-
-  static get observedAttributes() {
-    return [''];
   }
 }
 window.customElements.define("inicio-njv",Inicio);
